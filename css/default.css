@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  width: 900px;
+  margin: 20px auto 0;
+  padding: 0 20px;
+}
+article .profile {
+  width:300px;
+  float: left;
+  margin: 0 15px 15px 0;
+}
+header {
+  border-bottom: 2px dashed grey;
+}
+header nav ul {
+  list-style: none;
+  padding: 0;
+}
+header nav li {
+  display: inline-block;
+  padding: 0 10px;
+}
+/** Point 1 (Kyle) **/
+ul {
+  overflow: hidden;
+}
