@@ -6,7 +6,7 @@ body {
   margin: 20px auto 0;
   padding: 0 20px;
 }
-article .profile {
+article > .profile {
   width:300px;
   float: left;
   margin: 0 15px 15px 0;
@@ -26,3 +26,74 @@ header nav li {
 ul {
   overflow: hidden;
 }
+/* Profile Images */
+#gallery {
+  text-align: center;
+}
+#gallery .profile {
+  width: 200px;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  display: inline-block;
+  position: relative;
+}
+.profile .name {
+  position: absolute;
+  background-color: rgba(200,200,200,0.5);
+  font-size: 20px;
+  padding: 10px;
+  text-align:center;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: #333;
+  transition-property: color, background-color, font-size, font-weight;
+  transition-duration: 1s;
+}
+.profile:hover .name {
+  color: #fff;
+  font-size: 30px;
+  font-weight: bold;
+  background-color: rgba(46,46,46,0.5);
+}
+#robert {
+  background-image: url(https://avatars.slack-edge.com/2017-01-03/123686648054_4a6a1f3ba25b58bfe8a0_72.jpg);
+}
+#james_s {
+  background-image: url(https://ca.slack-edge.com/T03JJLPSP-U3D8VHD47-4292f61e0c1e-512);
+}
+#nick {
+  background-image: url(https://ca.slack-edge.com/T03JJLPSP-U3CENEZV0-b1bb1a03cd6d-1024);
+}
+#steven {
+  background-image: url(https://ca.slack-edge.com/T03JJLPSP-U218Q8VT9-25ba9d9576d5-512);
+}
+#angelina {
+  background-image: url(https://ca.slack-edge.com/T03JJLPSP-U3FU6EBFX-ec5c252cfd78-512);
+}
+#selcuk {
+  background-image: url(https://ca.slack-edge.com/T03JJLPSP-U3LP0D01G-09c5654afa5a-512);
+}
+#mauricio {
+  background-image: url(https://ca.slack-edge.com/T03JJLPSP-U3EGF95DL-b63d727d981e-512);
+}
+#kyle {
+  background-image: url(https://ca.slack-edge.com/T03JJLPSP-U3GLLSY3D-748164cbfcab-1024);
+}
+#eric {
+  background-image: url(https://ca.slack-edge.com/T03JJLPSP-U3LN9RZRR-ed66a04997e5-1024);
+}
+#alfe {
+  background-image: url(https://ca.slack-edge.com/T03JJLPSP-U2JAH1V6E-11ac6f1e6524-512);
+}
+#jarvis {
+  background-image: url(https://ca.slack-edge.com/T03JJLPSP-U38R6AHNU-gf1d4623b78a-48);
+}
+#joel {
+  background-image: url(https://ca.slack-edge.com/T03JJLPSP-U3KHZ6GH5-2bb0068bcc3d-1024);
+} 
+#james_w {
+  background-image: url(https://ca.slack-edge.com/T03JJLPSP-U3MEEQFCP-g67232efad9b-512);
+}
+
