@@ -14,6 +14,7 @@
     </ul>
     </nav>
   </header>
+  <div id="message"><%= flash[:confirm] if flash[:confirm] %></div>
 
   <%= yield %>
   <h2>Check out our class</h2>

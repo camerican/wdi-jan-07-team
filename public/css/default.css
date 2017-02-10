@@ -24,6 +24,11 @@ header nav li {
   display: inline-block;
   padding: 0 10px;
 }
+#message{
+  background-color: #33CC33;
+  color: #fff;
+  font-weight: bold;
+}
 /** Point 1 (Kyle) **/
 ul {
   overflow: hidden;

@@ -1,6 +1,9 @@
 # server.rb
-require "sinatra"
-require "sendgrid-ruby"
+require 'sinatra'
+require 'sendgrid-ruby'
+require 'sinatra/flash'
+
+enable :sessions
 
 before do
   @roster = [
@@ -80,7 +83,7 @@ post '/contact' do
     to = SendGrid::Email.new email: "cam@nycda.com"
 
     content = SendGrid::Content.new(
-        type: 'plain/text',
+        type: 'text/plain',
         value: params[:comment] 
     )
 
@@ -91,7 +94,8 @@ post '/contact' do
     response = sg.client.mail._('send').post(request_body: mail.to_json)
 
     #params.inspect
-    response.inspect
+    flash[:confirm] = "We received your email, thanks for your time."
+    redirect '/'
 end
 
 
