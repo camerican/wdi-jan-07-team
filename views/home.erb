@@ -1,0 +1,9 @@
+<h1>WDI Jan 2017 NYC</h1>
+
+  <div id="gallery">
+    <% @roster.each do |person| %>
+      <a href="profile/<%= person[:first].downcase %>"><div id="<%= person[:first].downcase %>" class="profile">
+        <div class="name"><%= person[:first] %></div>
+      </div></a>
+    <% end %>
+  </div><!--#gallery-->

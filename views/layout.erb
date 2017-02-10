@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>WDI Jan 2017 NYC</title>
+  <link rel="stylesheet" href="css/default.css" />
+</head>
+<body>
+  <%= yield %>
+  <h2>Check out our class</h2>
+  <nav>
+
+  <% @roster.each_with_index do |person,index| %>
+    <a href="/profile/<%= person[:first].downcase %>"><%= person[:first] %></a><%= " |" if index < ~-@roster.length %>
+  <% end %>
+  </nav>
+</body>
+</html>
