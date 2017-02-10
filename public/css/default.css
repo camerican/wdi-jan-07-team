@@ -16,7 +16,9 @@ header {
 }
 header nav ul {
   list-style: none;
+  display:inline-block;
   padding: 0;
+  float:right;
 }
 header nav li {
   display: inline-block;

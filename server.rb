@@ -1,5 +1,6 @@
 # server.rb
 require "sinatra"
+require "sendgrid-ruby"
 
 before do
   @roster = [
@@ -67,9 +68,38 @@ get '/' do
   erb :home
 end
 
+get '/contact' do
+  erb :contact
+end
+
+post '/contact' do
+    #to do: process the email sending
+    # our sendgrid code should be here
+    from = SendGrid::Email.new email: params[:email]
+    subject = params[:subject]
+    to = SendGrid::Email.new email: "cam@nycda.com"
+
+    content = SendGrid::Content.new(
+        type: 'plain/text',
+        value: params[:comment] 
+    )
+
+    mail = SendGrid::Mail.new(from,subject,to,content)
+
+    sg = SendGrid::API.new( api_key: ENV['SENDGRID_API_KEY'])
+
+    response = sg.client.mail._('send').post(request_body: mail.to_json)
+
+    #params.inspect
+    response.inspect
+end
+
+
 get '/profile/:student' do
   # try to find the current student based on the url
   @student = @roster.select {|x| x[:first].downcase == params[:student].downcase }.first
   redirect '/' unless @student # make sure we found a student that matches from our roster
   erb :profile
 end
+
+
