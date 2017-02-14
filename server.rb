@@ -2,11 +2,17 @@
 require 'sinatra'
 require 'sendgrid-ruby'
 require 'sinatra/flash'
-require './models'
+require 'activerecord'
+require 'sinatra/activerecord'
+#require './models'
+
+set :database, "sqlite3:test.db"
 
 enable :sessions
 
 before do
+  #to do for 2/14: Switch from a hard-coded hash
+  # to a roster table within our DB
   @roster = [
     {first: "Ber",
      last: "Cohen",
