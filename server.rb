@@ -2,6 +2,7 @@
 require 'sinatra'
 require 'sendgrid-ruby'
 require 'sinatra/flash'
+require './models'
 
 enable :sessions
 
@@ -68,6 +69,8 @@ before do
 end
 
 get '/' do
+  @users = User.all
+  p User.find(1)
   erb :home
 end
 
